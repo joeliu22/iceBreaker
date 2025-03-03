@@ -1,17 +1,14 @@
-//
-//  iceBreakerApp.swift
-//  iceBreaker
-//
-//  Created by ZHANGYU LIU on 3/3/25.
-//
-
 import SwiftUI
 
 @main
 struct iceBreakerApp: App {
+    @StateObject private var viewModel = QuestionViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                QuestionsManagementView(viewModel: viewModel)
+            }
         }
     }
 }
